@@ -40,7 +40,14 @@ jobs:
         run: |
           aws eks update-kubeconfig --region ${{ secrets.AWS_REGION }} --name cluster-demo
 
+
       - name: Install Helm
         uses: azure/setup-helm@v1
         with:
           version: 'v3.2.4'
+      
+      - name: Deploy to Kubernetes
+        run: |
+          kubectl config set-context --current --namespace=default
+          helm upgrade --install todoapi chart -f chart/values.yaml
+
