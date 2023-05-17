@@ -1,0 +1,16 @@
+replicaCount: 1
+
+image:
+  repository: techtalk/library/test-api
+  tag: v.0.1
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 5000
+
+labels:
+  app: todo-api
+
+app:
+  environment: DEV
