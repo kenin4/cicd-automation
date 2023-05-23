@@ -49,5 +49,5 @@ jobs:
       - name: Deploy to Kubernetes
         run: |
           kubectl config set-context --current --namespace=default
-          helm upgrade --install todoapi chart -f chart/values.yaml
+          helm upgrade --install todoapi chart -f chart/values.yaml -n creditas-demo
 
