@@ -13,4 +13,4 @@ labels:
   app: todo-api
 
 app:
-  environment: DEV
+  environment: PROD
